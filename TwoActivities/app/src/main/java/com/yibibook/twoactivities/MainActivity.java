@@ -32,18 +32,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         String msg = mMessageEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, msg);
-        startActivity(intent);
         startActivityForResult(intent, TEXT_REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != TEXT_REQUEST_CODE) {
+        if (resultCode != RESULT_OK) {
             return;
         }
 
-        if (resultCode == RESULT_OK) {
+        if (requestCode == TEXT_REQUEST_CODE) {
             String msg = data.getStringExtra(SecondActivity.EXTRA_REPLY);
             mHeaderReply.setVisibility(View.VISIBLE);
             mMessageTextView.setVisibility(View.VISIBLE);
