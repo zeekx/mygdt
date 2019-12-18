@@ -1,4 +1,4 @@
-package com.yibibook.twoactivities;
+package com.yibibook.twoactivitieslifecycle;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.yibibook.twoactivities", appContext.getPackageName());
+        assertEquals("com.yibibook.twoactivitieslifecycle", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.yibibook.twoactivities;
+package com.yibibook.twoactivitieslifecycle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     public static final String EXTRA_MESSAGE = "MESSAGE";
     public static final int TEXT_REQUEST_CODE = 1;
     private TextView mMessageTextView;
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         mHeaderReply = findViewById(R.id.text_header_reply);
         mMessageTextView = findViewById(R.id.textView_msg);
         mMessageEditText = findViewById(R.id.editText_main);
+        Log.d(LOG_TAG, "------------");
+        Log.d(LOG_TAG, "onCreate");
     }
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -33,6 +34,42 @@ public class MainActivity extends AppCompatActivity {
         String msg = mMessageEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, msg);
         startActivityForResult(intent, TEXT_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(LOG_TAG, "onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG, "onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(LOG_TAG, "onRestart");
     }
 
     @Override
@@ -48,5 +85,6 @@ public class MainActivity extends AppCompatActivity {
             mMessageTextView.setVisibility(View.VISIBLE);
             mMessageTextView.setText(msg);
         }
+        Log.d(LOG_TAG, "onActivityResult");
     }
 }

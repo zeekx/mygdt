@@ -1,4 +1,4 @@
-package com.yibibook.twoactivities;
+package com.yibibook.twoactivitieslifecycle;
 
 import org.junit.Test;
 
