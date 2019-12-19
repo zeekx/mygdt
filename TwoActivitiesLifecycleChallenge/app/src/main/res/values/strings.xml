@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TwoActivitiesLifecycleChallenge</string>
+    <string name="button_main">NEW</string>
+    <string name="activity2_name">Second Activity</string>
+    <string name="text_header">Grace</string>
+    <string name="editText_main">Enter Your Message Here</string>
+    <string name="shopping_list_item">\?</string>
+</resources>
