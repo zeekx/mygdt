@@ -5,4 +5,5 @@
     <string name="text_header">Grace</string>
     <string name="editText_main">Enter Your Message Here</string>
     <string name="shopping_list_item">\?</string>
+    <string name="find_store">Find Store</string>
 </resources>
