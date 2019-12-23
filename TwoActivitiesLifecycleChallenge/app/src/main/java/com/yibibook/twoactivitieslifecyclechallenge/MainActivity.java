@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < mShoppingList.size(); i++) {
                 String text = savedInstanceState.getString("shopping_list_" + i);
                 mShoppingList.get(i).setText(text);
-                Log.d(LOG_TAG, "shopping_list_" + i + ":" + text);
+                Log.i(LOG_TAG, "shopping_list_" + i + ":" + text);
             }
         }
     }
@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         for (int i = 0; i < mShoppingList.size(); i++) {
             outState.putString("shopping_list_" + i, mShoppingList.get(i).getText().toString());
-            Log.d(LOG_TAG, "shopping_list_" + i + ":" + mShoppingList.get(i).getText().toString());
+            Log.i(LOG_TAG, "shopping_list_" + i + ":" + mShoppingList.get(i).getText().toString());
         }
-        Log.d(LOG_TAG, "onSaveInstanceState");
+        Log.i(LOG_TAG, "onSaveInstanceState");
     }
 
     @Override

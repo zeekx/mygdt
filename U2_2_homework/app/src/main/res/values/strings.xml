@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">U2_2_homework</string>
+    <string name="count_score_button_text">Count</string>
+    <string name="edit_text_hit">Enter content here</string>
+</resources>
