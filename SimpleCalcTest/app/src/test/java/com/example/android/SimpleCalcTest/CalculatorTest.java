@@ -58,8 +58,9 @@ public class CalculatorTest {
      */
     @Test
     public void addTwoNumbersNegative() {
-        double resultAdd = mCalculator.add(-1d, 2d);
-        assertThat(resultAdd, is(equalTo(1d)));
+//        double resultAdd = mCalculator.add(-1d, 2d);
+        double resultAdd = mCalculator.add(-3d, 1d);
+        assertThat(resultAdd, is(equalTo(-2d)));
     }
     /**
      * Tests for addition where the result is negative.
@@ -114,14 +115,6 @@ public class CalculatorTest {
     }
 
     /**
-     * Tests for divide by zero; must throw IllegalArgumentException.
-     */
-    @Test(expected = IllegalArgumentException.class)
-    public void divByZeroThrows() {
-        mCalculator.div(32d,0d);
-    }
-
-    /**
      * Tests for divide by zero; always fails, so removed.
      */
     /*@Test
@@ -130,6 +123,12 @@ public class CalculatorTest {
         assertThat(resultDiv, is(equalTo(Double.POSITIVE_INFINITY)));
     }*/
 
+    /*
+    * Test for divide by 0, must throws IllegalArgument Exception*/
+    @Test(expected = IllegalArgumentException.class)
+    public void divByZeroThrows() {
+        mCalculator.div(33, 0);
+    }
 
     /**
      * Tests for simple multiplication.
