@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Dec 24 16:28:30 CST 2019
+#Tue Dec 24 16:36:22 CST 2019
 0.baseType=DIRECTORY
 0.base=/Users/51talk_developer/Documents/WorkSpace/Github/mygdt/SimpleCalcTestHomework/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex

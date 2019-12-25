@@ -115,6 +115,12 @@ public class MainActivity extends Activity {
                 result = String.valueOf(
                         mCalculator.mul(operandOne, operandTwo));
                 break;
+
+            case POW:
+                result = String.valueOf(
+                        mCalculator.pow(operandOne, operandTwo));
+                break;
+
             default:
                 result = getString(R.string.computationError);
                 break;
@@ -139,5 +145,14 @@ public class MainActivity extends Activity {
             throw new NumberFormatException("Operand cannot be empty!");
         }
         return operandText;
+    }
+
+    public void onPow(View view) {
+        try {
+            compute(Calculator.Operator.POW);
+        } catch (IllegalArgumentException iae) {
+            Log.e(TAG, "IllegalArgumentException", iae);
+            mResultTextView.setText(getString(R.string.computationError));
+        }
     }
 }

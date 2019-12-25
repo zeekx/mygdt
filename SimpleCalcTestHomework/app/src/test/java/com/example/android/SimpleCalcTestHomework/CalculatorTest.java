@@ -139,4 +139,51 @@ public class CalculatorTest {
         assertThat(resultMul, is(equalTo(64d)));
     }
 
+    @Test
+    public void powTwoPositiveNumbers() {
+        final double resultPow = mCalculator.pow(2d, 3d);
+        assertThat(resultPow, is(equalTo(8d)));
+    }
+
+
+    @Test
+    public void powNegativeIntegerBaseNumbers() {
+        final double resultPow = mCalculator.pow(-3d, 2d);
+        assertThat(resultPow, is(equalTo(9d)));
+    }
+
+    @Test
+    public void powNegativeIntegerExpNumbers() {
+        final double resultPow = mCalculator.pow(3d, -2d);
+        assertThat(resultPow, is(equalTo(1/9d)));
+    }
+
+    @Test
+    public void powZeroWasBasePositiveExpNumbers() {
+        final double resultPow = mCalculator.pow(0, 2d);
+        assertThat(resultPow, is(equalTo(0d)));
+    }
+
+    /*
+    * pow(0, -1)*/
+    @Test
+    public void powZeroWasBaseNegativeOneNumbers() {
+        final double resultPow = mCalculator.pow(0, -1d);
+        assertThat(resultPow, is(equalTo(Double.POSITIVE_INFINITY)));
+    }
+
+    @Test
+    public void powZeroWasExpNumbers() {
+        final double resultPow = mCalculator.pow(3d, 0d);
+        assertThat(resultPow, is(equalTo(1d)));
+    }
+
+    /*
+    * pow(-0, -3)*/
+    @Test
+    public void powNegativeZeroWasBaseNegativeExpNumbers() {
+        final double resultPow = mCalculator.pow(-0, -2d);
+        assertThat(resultPow, is(equalTo(Double.POSITIVE_INFINITY)));
+    }
+
 }
