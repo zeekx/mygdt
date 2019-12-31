@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <CheckBox
+        android:id="@+id/chocolate_syrup"
+        android:onClick="onCheckBoxSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chocolate_syrup" />
+
+    <CheckBox
+        android:id="@+id/sprinkles"
+        android:onClick="onCheckBoxSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sprinkles" />
+
+    <CheckBox
+        android:id="@+id/crushed_nuts"
+        android:onClick="onCheckBoxSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/crushed_nuts" />
+
+    <CheckBox
+        android:id="@+id/cherries"
+        android:onClick="onCheckBoxSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cherries" />
+
+    <CheckBox
+        android:id="@+id/orio_cookie_crumbles"
+        android:onClick="onCheckBoxSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orio_cookie_crumbles" />
+
+    <Button
+        android:onClick="onDisplayToast"
+        android:text="@string/show_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
