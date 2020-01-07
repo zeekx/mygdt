@@ -16,6 +16,19 @@
     <string name="pick_up">Pick up</string>
     <string name="next_day_ground_delivery">Next day ground delivery</string>
     <string name="same_day_messenger_service">Same day messenger service</string>
+    <string name="action_contact">Contact</string>
+    <string name="action_status">Status</string>
+    <string name="action_order">Order</string>
+    <string name="action_favourite">Favourite</string>
+    <string name="mc_action_edit">Edit</string>
+    <string name="mc_action_copy">Copy</string>
+    <string name="mc_action_cut">Cut</string>
+    <string name="detail_text"><![CDATA[A context menu appears as a floating list of menu items when the user performs a touch & hold on a View, \n
+    as shown in the left side of the figure below. For this challenge, add a context menu to the ScrollingText app to show three options: Edit, \n
+    Share, and Delete, as shown in the figure below. The menu appears when the user performs a touch & hold on the TextView. The app then displays\n
+     a Toast message showing the menu option chosen, as shown in the right side of the figure.A context menu appears as a floating list of menu items\n
+      when the user performs a touch & hold on a View, as shown in the left side of the figure below. \n
+      For this challenge, add a context menu to the ScrollingText app to show three options: Edit, Share, and Delete, as shown in the figure below. The menu appears when the user performs a touch & hold on the TextView. The app then displays a Toast message showing the menu option chosen, as shown in the right side of the figure.A context menu appears as a floating list of menu items when the user performs a touch & hold on a View, as shown in the left side of the figure below. For this challenge, add a context menu to the ScrollingText app to show three options: Edit, Share, and Delete, as shown in the figure below. The menu appears when the user performs a touch & hold on the TextView. The app then displays a Toast message showing the menu option chosen, as shown in the right side of the figure.A context menu appears as a floating list of menu items when the user performs a touch & hold on a View, as shown in the left side of the figure below. For this challenge, add a context menu to the ScrollingText app to show three options: Edit, Share, and Delete, as shown in the figure below. The menu appears when the user performs a touch & hold on the TextView. The app then displays a Toast message showing the menu option chosen, as shown in the right side of the figure.A context menu appears as a floating list of menu items when the user performs a touch & hold on a View, as shown in the left side of the figure below. For this challenge, add a context menu to the ScrollingText app to show three options: Edit, Share, and Delete, as shown in the figure below. The menu appears when the user performs a touch & hold on the TextView. The app then displays a Toast message showing the menu option chosen, as shown in the right side of the figure.]]></string>
 
     <string-array name="labels_array">
         <item>Home</item>
