@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PickerForDate</string>
+    <string name="tap_tip">Hello World! Choose a date:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date_pick_fragment_show_tag">DatePicker</string>
+</resources>
