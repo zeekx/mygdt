@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,9 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private List<String> mWordList = new ArrayList<>(41);
+    private static int WORD_SIZE = 20000 * 10;
+    private List<String> mWordList = new ArrayList<>(WORD_SIZE * 2 + 1);
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
+    private List<String> mOriginalWordList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +39,22 @@ public class MainActivity extends AppCompatActivity {
               int size = mWordList.size();
               mWordList.add("+ word " + size);
               mRecyclerView.getAdapter().notifyItemInserted(size);
-              mRecyclerView.smoothScrollToPosition(size);
+//              mRecyclerView.smoothScrollToPosition(size);
+                mRecyclerView.scrollToPosition(size);
             }
         });
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < WORD_SIZE; i++) {
             mWordList.add("word" + i);
         }
+
+        mOriginalWordList = new ArrayList<>();
+        mOriginalWordList.addAll(mWordList);
 
         mAdapter = new WordListAdapter(this, mWordList);
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.addOnItemTouchListener(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
@@ -65,7 +73,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            mWordList.clear();
+            mWordList.addAll(mOriginalWordList);
+            mRecyclerView.getAdapter().notifyDataSetChanged();
+            Log.d("rreset", "original size " + mOriginalWordList.size() + "word list " + mWordList.size());
             return true;
         }
 
