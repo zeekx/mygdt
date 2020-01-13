@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class DetailActivity extends AppCompatActivity {
     public static String EXTRA_TITLE = "com.yibibook.materialme.detailactivity.title";
     public static String EXTRA_IMAGE_RESOURCE = "com.yibibook.materialme.detailactivity.imageresource";
@@ -32,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         mImageRes = intent.getIntExtra(EXTRA_IMAGE_RESOURCE, 0);
 
         mTitleView.setText(mTitle);
-        mImageView.setImageResource(mImageRes);
+        Glide.with(this).load(mImageRes).into(mImageView);
     }
 
 }

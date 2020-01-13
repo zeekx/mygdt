@@ -24,7 +24,7 @@
     <string name="app_name">Material Me</string>
     <string name="news_placeholder">NEW</string>
     <string name="title_placeholder">Title</string>
-
+    <string name="sports_info_placeholder">Here is some news</string>
     <string-array name="sports_info">
         <item>Here is some Baseball news!</item>
         <item>Here is some Badminton news!</item>

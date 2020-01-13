@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 
@@ -44,13 +46,13 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.ItemHolder> 
 
         private TextView tvTitle;
         private TextView tvInfo;
-        private ImageView ivImage;
+        private ImageView ivDetailImageView;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.title);
             tvInfo = itemView.findViewById(R.id.subTitle);
-            ivImage = itemView.findViewById(R.id.sportsImage);
+            ivDetailImageView = itemView.findViewById(R.id.sportsImage);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -67,6 +69,7 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.ItemHolder> 
         public void bindWith(Sport sport) {
             tvTitle.setText(sport.getTitle());
             tvInfo.setText(sport.getInfo());
+            Glide.with(mContext).load(sport.getImageResource()).into(ivDetailImageView);
         }
     }
 }
