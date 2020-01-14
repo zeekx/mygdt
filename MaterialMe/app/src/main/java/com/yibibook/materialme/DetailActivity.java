@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mTitle = intent.getStringExtra(EXTRA_TITLE);
         mImageRes = intent.getIntExtra(EXTRA_IMAGE_RESOURCE, 0);
-
+        Log.d("ttt", "mTitle:" + mTitle + " img res:" + mImageRes);
         mTitleView.setText(mTitle);
         Glide.with(this).load(mImageRes).into(mImageView);
     }
