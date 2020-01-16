@@ -17,10 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="SportsTitle" parent="TextAppearance.AppCompat.Headline"/>
+    <style name="SportsTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">?android:colorPrimary</item>
+    </style>
 
-    <style name="SportsDetailTitle" parent="TextAppearance.AppCompat.Headline"/>
-    <style name="SportsDetailText" parent="TextAppearance.AppCompat.Subhead"/>
-
-
+    <style name="SportsDetailTitle" parent="TextAppearance.AppCompat.Display3"/>
+    <style name="SportsDetailText" parent="TextAppearance.AppCompat.Headline"/>
 </resources>

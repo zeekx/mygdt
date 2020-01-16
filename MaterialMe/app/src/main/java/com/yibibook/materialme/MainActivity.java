@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.ItemTouchUIUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,20 +45,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mRecyclerView = findViewById(R.id.recycler_view);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final int grid_column_count = getResources().getInteger(R.integer.grid_column_count);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, grid_column_count));
         mAdapter = new SportAdapter(this, mSportData);
         mRecyclerView.setAdapter(mAdapter);
 
         initializeData(savedInstanceState);
 
-
+        int swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        if (grid_column_count > 1) {
+            swipeDirs = 0;
+        }
         ItemTouchHelper helper = new ItemTouchHelper(
                 new ItemTouchHelper.SimpleCallback(
                         ItemTouchHelper.UP
-                        | ItemTouchHelper.DOWN,
+                        | ItemTouchHelper.DOWN
+                        | ItemTouchHelper.START
+                        | ItemTouchHelper.END,
 
-                ItemTouchHelper.LEFT
-                        | ItemTouchHelper.RIGHT) {
+                        swipeDirs) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView,
                                   @NonNull RecyclerView.ViewHolder viewHolder,
