@@ -1,6 +1,9 @@
 package com.yibibook.materialme;
 
-public class Sport {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Sport implements Parcelable {
 
     // Member variables representing the title and information about the sport.
     private String title;
@@ -18,6 +21,24 @@ public class Sport {
         this.info = info;
         this.imageResource = imageResource;
     }
+
+    protected Sport(Parcel in) {
+        title = in.readString();
+        info = in.readString();
+        imageResource = in.readInt();
+    }
+
+    public static final Creator<Sport> CREATOR = new Creator<Sport>() {
+        @Override
+        public Sport createFromParcel(Parcel in) {
+            return new Sport(in);
+        }
+
+        @Override
+        public Sport[] newArray(int size) {
+            return new Sport[size];
+        }
+    };
 
     /**
      * Gets the title of the sport.
@@ -39,5 +60,17 @@ public class Sport {
 
     public int getImageResource() {
         return imageResource;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(info);
+        dest.writeInt(imageResource);
     }
 }
