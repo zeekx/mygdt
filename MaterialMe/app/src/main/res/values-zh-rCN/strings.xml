@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="sports_images">
         <item>@drawable/img_baseball</item>
@@ -41,17 +42,17 @@
 
 
     <string-array name="sports_titles">
-        <item>Baseball</item>
-        <item>Badminton</item>
-        <item>Basketball</item>
-        <item>Bowling</item>
-        <item>Cycling</item>
-        <item>Golf</item>
-        <item>Running</item>
-        <item>Football</item>
-        <item>Swimming</item>
-        <item>Table Tennis</item>
-        <item>Tennis</item>
+        <item>棒球</item>
+        <item>羽毛球</item>
+        <item>篮球</item>
+        <item>保龄球</item>
+        <item>自行车</item>
+        <item>高尔夫</item>
+        <item>跑步</item>
+        <item>足球</item>
+        <item>游泳</item>
+        <item>乒乓球</item>
+        <item>网球</item>
     </string-array>
 
 </resources>

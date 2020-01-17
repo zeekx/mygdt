@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static int WORD_SIZE = 20000 * 10;
+    private static int WORD_SIZE = 20000 * 1;
     private List<String> mWordList = new ArrayList<>(WORD_SIZE * 2 + 1);
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addOnItemTouchListener(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final int grid_column_count = getResources().getInteger(R.integer.grid_column_count);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, grid_column_count));
     }
 
     @Override
